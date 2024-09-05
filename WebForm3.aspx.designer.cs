@@ -11,43 +11,43 @@ namespace _2024_08_20Final1
 {
 
 
-    public partial class Login1
+    public partial class Login
     {
 
         /// <summary>
-        /// Controle Logo.
+        /// Controle loginForm.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Logo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
 
         /// <summary>
-        /// Controle loginEmail.
+        /// Controle username.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox loginEmail;
+        protected global::System.Web.UI.WebControls.TextBox username;
 
         /// <summary>
-        /// Controle loginSenha.
+        /// Controle password.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox loginSenha;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// Controle btnLogin.
+        /// Controle loginButton.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Button loginButton;
     }
 }

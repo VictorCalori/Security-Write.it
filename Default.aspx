@@ -1,6 +1,8 @@
 <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_2024_08_20Final1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <meta charset="UTF-8">
+
     <div class="jumbotron">
         <div class="text-center">
             <asp:Image ID="Logo" runat="server" Height="276px" ImageUrl="~/img/2semfundo.png" Width="424px" />
@@ -12,25 +14,31 @@
     </div>
 
     <style>
-          #BodyContent{
-                height:500px;
-         }
+        /* Ajusta a altura do conteúdo do corpo */
+        #BodyContent {
+            height: 500px;
+        }
+
+        /* Estiliza a jumbotron */
         .jumbotron {
             border: solid 3px #702C2B;
             border-radius: 100px;
             background-color: #ffffff;
             height: 800px; /* Aumenta a altura da jumbotron */
             max-width: 1200px; /* Define uma largura máxima para a jumbotron */
-            margin: 50px auto auto auto; /* Centraliza a jumbotron horizontalmente */
+            margin: 50px auto; /* Centraliza a jumbotron horizontalmente */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
+
+        /* Estiliza o botão primário */
         .btn-primary.btn-lg {
             background-color: #702C2B;
             border-color: #702C2B; 
         }
     </style>
 </asp:Content>
+    

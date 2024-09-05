@@ -1,48 +1,57 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_2024_08_20Final1.Login1" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="shortcut icon" href="imagens/chart-pie-alt.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
-            <asp:Image ID="Logo" runat="server" Height="334px" ImageUrl="~/img/2semfundo.png" Width="349px" />
+            <br />
+            <br />
+            <br />
+          <center>  <asp:Image ID="Logo" runat="server" ImageUrl="~/img/Texto_do_seu_parágrafo-removebg-preview.png" /></center>
         </div>
         <div class="main-content">
             <nav>
-                <img src="imagens/imagem_-removebg-preview.png" alt="">
+               
             </nav>
+            <br />
             <main>
+                <br />
+            <br />
                 <header>
-                    <img src="imagens/brilhos.png" alt="">
+                    
                     <h1>Bem-vindo de volta!</h1>
                     <p>Por favor insira seus detalhes</p>
                 </header>
-                <form>
-                    <input type="email" placeholder="Email" class="input-padrao" required>
-                    <input type="password" placeholder="Senha" class="input-padrao" required>
-                    <input type="submit" value="Login" class="btn-submit">
-                    <input type="button" value="Faça login com o Google" class="btn-google">
+                <!-- Usar form server-side para postback -->
+                <form runat="server">
+                    <br />
+                    <br />
+                    <asp:TextBox ID="loginEmail" runat="server" CssClass="input-padrao" Placeholder="Email" TextMode="Email" required="required"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="loginSenha" runat="server" CssClass="input-padrao" Placeholder="Senha" TextMode="Password" required="required"></asp:TextBox>
+                    <asp:Button ID="btnLogin" runat="server" CssClass="btn-submit" Text="Login" OnClick="Login_Click" />
+                    <button type="button" class="btn-google">Faça login com o Google</button>
+                    
                     <div class="navbar">
                         <a href="./Recuperarsenha.aspx">Esqueceu sua senha?</a>
                     </div>
                     <div class="bar">
                         <a href="./Cadastro.aspx">Não tem uma conta? <strong>Inscrever-se</strong></a>
                     </div>
-                    <div class="google">
-                        <img src="imagens/google-37.png" alt="">
-                    </div>
+                
                 </form>
             </main>
         </div>
     </div>
-
     <style>
-        * {
+           * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -59,41 +68,20 @@ body {
 
 .container {
     display: flex;
-    max-width: 1000px;
+    max-width: 1500px;
     width: 100%;
+    height:500px;
 }
 
 .left-panel {
-    width: 400px;
+    width: 500px;
     background-color: #702C2B;
     color: #ffffff;
     padding: 20px;
     border-radius: 12px;
     margin-right: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.left-panel h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.left-panel ul {
-    list-style-type: none;
-}
-
-.left-panel ul li {
-    margin-bottom: 12px;
-}
-
-.left-panel ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.left-panel ul li a:hover {
-    color: #C56869;
+    height:500px
 }
 
 .main-content {
@@ -107,34 +95,16 @@ body {
     border: 3px solid #702C2B;
 }
 
-nav {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-nav > img {
-    width: 100%;
-    border-radius: 12px;
-}
-
 header > img {
     width: 40px;
     margin-bottom: 10px;
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 26px;
     font-weight: 500;
     color: #702C2B;
     margin-bottom: 10px;
-}
-
-header > p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
 }
 
 .input-padrao {
@@ -154,7 +124,7 @@ header > p {
     background-color: #ffffff;
 }
 
-.btn-submit {
+.btn-submit, .btn-google {
     background-color: #ffffff;
     color: #702C2B;
     border: 2px solid #702C2B;
@@ -167,29 +137,13 @@ header > p {
     width: 100%;
 }
 
-.btn-submit:hover {
+.btn-submit:hover, .btn-google:hover {
     background-color: #C56869;
     color: #ffffff;
 }
 
 .btn-google {
     background-color: #dfdede;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 10px 30px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-google:hover {
-    background-color: #C56869;
-    color: #ffffff;
 }
 
 .google > img {
@@ -197,27 +151,11 @@ header > p {
     margin-left: 10px;
 }
 
-.navbar {
-    margin-bottom: 20px;
-    padding-top: 10px;
-    text-align: left;
-}
-
 .navbar > a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     color: #702C2B;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.navbar > a:hover {
-    color: #C56869;
-}
-
-.bar {
-    margin-top: 15px;
-    font-size: 14px;
 }
 
 .bar > a {
@@ -225,11 +163,6 @@ header > p {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
-.bar > a:hover {
-    color: #C56869;
-}
-
     </style>
 </body>
 </html>

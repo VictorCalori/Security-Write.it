@@ -1,3 +1,4 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cadastro.aspx.cs" Inherits="_2024_08_20Final1.WebForm1" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,33 +11,38 @@
 <body>
     <div class="container">
          <div class="left-panel">
-     <asp:Image ID="Logo" runat="server" Height="334px" ImageUrl="~/img/2semfundo.png" Width="349px" />
-        </div>
+             <br />
+             <br />
+             <br />
+             <asp:Image ID="Logo1" runat="server" ImageUrl="~/img/imgLogin.png" /></div>
         <main class="main-content">
             <header>
-                <img src="imagens/brilhos.png" alt="">
+                
+                <h1>&nbsp;</h1>
                 <h1>Bem-vindo(a) Leitor(a)</h1>
                 <p>Por favor, insira seus detalhes para começarmos nossa jornada de leitura</p>
             </header>
-            <form>
-                <input type="text" placeholder="Usuário" class="input-padrao" required />
-                <input type="email" placeholder="Email" class="input-padrao" required>
-                <input type="password" placeholder="Senha" class="input-padrao" required>
-                <input type="submit" value="Login" class="input-padrao btn-submit">
-                <input type="button" value="Cadastre-se com o Google" class="input-padrao btn-google">
+            <form method="post" runat="server">
+                <br />
+                <input type="text" name="nome" placeholder="Usuário" class="input-padrao" required />
+                <input type="email" name="email" placeholder="Email" class="input-padrao" required>
+                <input type="password" name="senha" placeholder="Senha" class="input-padrao" required>
+                <!-- Botão de Cadastro -->
+                <br />
+                <br />
+                <asp:Button ID="Btncad" runat="server" Text="Cadastro" CssClass="btn-submit" OnClick="Btncad_Click" />
+                <center><button type="button" class="btn-google">Cadastre-se com o Google</button></center>
                 <div class="bar">
                     <a href="./Login.aspx">Já tem uma conta? <strong>Login</strong></a>
                 </div>
-                <div class="google">
-                    <img src="imagens/google-37.png" alt="">
-                </div>
             </form>
         </main>
-       
     </div>
 
+    <asp:SqlDataSource ID="SqlDS1" runat="server" ConnectionString="<%$ ConnectionStrings:Login-projetofinalConnectionString2 %>" SelectCommand="SELECT * FROM [Usuarios]"></asp:SqlDataSource>
+
     <style>
-      * {
+         * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -53,41 +59,22 @@ body {
 
 .container {
     display: flex;
-    max-width: 1000px;
+    max-width: 1500px;
     width: 100%;
+    height: 500px;
 }
 
 .left-panel {
-    width: 400px;
+    width: 500px;
     background-color: #702C2B;
     color: #ffffff;
     padding: 20px;
     border-radius: 12px;
     margin-right: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.left-panel h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.left-panel ul {
-    list-style-type: none;
-}
-
-.left-panel ul li {
-    margin-bottom: 12px;
-}
-
-.left-panel ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.left-panel ul li a:hover {
-    color: #C56869;
+    align-items: center;
+    text-align:center;
+    height:500px;
 }
 
 .main-content {
@@ -107,7 +94,6 @@ header > img {
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 26px;
     font-weight: 500;
     color: #702C2B;
@@ -166,6 +152,7 @@ header > p {
     border-radius: 20px;
     border: 1px solid #ccc;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-align:center;
 }
 
 .btn-google:hover {
@@ -192,7 +179,6 @@ header > p {
 .bar > a:hover {
     color: #C56869;
 }
-
     </style>
 </body>
 </html>

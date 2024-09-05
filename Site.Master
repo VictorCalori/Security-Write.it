@@ -80,16 +80,15 @@
         .navbar navbar-inverse navbar-fixed-top{
             color: #eeeeee;
             height: 4px;
-            border: 2px solid, #eeeeee;
+            border: 2px solid, #eeeeee
         }
         .navbar-header{
-            border: 2px solid, #eeeee;
+            border: 2px solid, #eeeee
         }
         
         footer {
             text-align: center;
         }
     </style>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 </body>
 </html>
